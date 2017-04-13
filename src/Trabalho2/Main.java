@@ -9,9 +9,11 @@ import Componentes.Produtos;
 
 public class Main {
 
+	private static Scanner scanner;
+
 	public static void main(String[] args) throws IOException {
 		int opc = -1;
-		Scanner scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 		while (opc != 0) {
 			System.out.println("MENU");
 			System.out.println(
