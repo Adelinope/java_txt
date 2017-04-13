@@ -63,16 +63,19 @@ public class Menu {
 				valorDeVenda =  scanner.nextFloat();
 				
 				System.out.println("Digite o nome da fonte: ");
-				nome = scanner.next();
+				nome = scanner.nextLine();
+				nome = scanner.nextLine();
 				
 				System.out.println("Digite a frequencia da fonte: ");
-				frequencia = scanner.next();
+				frequencia = scanner.nextLine();
+				
 		
 				System.out.println("Digite a marca: ");
 				marca= scanner.next();
 				
 				System.out.println("Digite a descrição: ");
-				descricao = scanner.next();
+				descricao = scanner.nextLine();
+				descricao = scanner.nextLine();
 				tipo =1;
 				fonte= new Fonte(Arquivo.buscarId("arquivos/componentes.txt"),tipo,valorDeCompra,valorDeVenda,descricao,nome,frequencia, marca);
 				fonte.cadastraProduto();
@@ -85,16 +88,18 @@ public class Menu {
 				valorDeVenda =  scanner.nextFloat();
 				
 				System.out.println("Digite o nome do HD: ");
-				nome = scanner.next();
-				
+				nome = scanner.nextLine();
+				nome = scanner.nextLine();
 				System.out.println("Digite a tamanho do HD: ");
+				
 				tamanho = scanner.next();
 		
 				System.out.println("Digite a rotação: ");
 				rotacao= scanner.next();
 				
 				System.out.println("Digite a descrição: ");
-				descricao = scanner.next();
+				descricao = scanner.nextLine();
+				descricao = scanner.nextLine();
 				tipo =2;
 				hd = new Hd(Arquivo.buscarId("arquivos/componentes.txt"),tipo,valorDeCompra,valorDeVenda,descricao,nome,tamanho, rotacao);
 				hd.cadastraProduto();
@@ -107,8 +112,8 @@ public class Menu {
 				valorDeVenda =  scanner.nextFloat();
 				
 				System.out.println("Digite o nome da memoria: ");
-				nome = scanner.next();
-				
+				nome = scanner.nextLine();
+				nome = scanner.nextLine();
 				System.out.println("Digite a marca da memoria: ");
 				marca = scanner.next();
 		
@@ -116,7 +121,8 @@ public class Menu {
 				barramento= scanner.next();
 				
 				System.out.println("Digite a descrição: ");
-				descricao = scanner.next();
+				descricao = scanner.nextLine();
+				descricao = scanner.nextLine();
 				tipo = 3;
 				memoria= new Memoria(Arquivo.buscarId("arquivos/componentes.txt"),tipo,valorDeCompra,valorDeVenda,descricao,nome,marca, barramento);
 				memoria.cadastraProduto();
@@ -129,8 +135,8 @@ public class Menu {
 				valorDeVenda =  scanner.nextFloat();
 				
 				System.out.println("Digite o nome da Placa Mãe: ");
-				nome = scanner.next();
-				
+				nome = scanner.nextLine();
+				nome = scanner.nextLine();
 				System.out.println("Digite a marca da Placa Mãe: ");
 				marca = scanner.next();
 		
@@ -138,7 +144,8 @@ public class Menu {
 				soquete= scanner.next();
 				
 				System.out.println("Digite a descrição: ");
-				descricao = scanner.next();
+				descricao = scanner.nextLine();
+				descricao = scanner.nextLine();
 				tipo = 4;
 				placaM= new PlacaDeMae(Arquivo.buscarId("arquivos/componentes.txt"),tipo,valorDeCompra,valorDeVenda,descricao,nome,marca, soquete);
 				placaM.cadastraProduto();
@@ -151,8 +158,8 @@ public class Menu {
 				valorDeVenda =  scanner.nextFloat();
 				
 				System.out.println("Digite o nome da Placa de Video: ");
-				nome = scanner.next();
-				
+				nome = scanner.nextLine();
+				nome = scanner.nextLine();
 				System.out.println("Digite o tamanho da memoria da Placa de Video: ");
 				tamanho = scanner.next();
 		
@@ -174,7 +181,8 @@ public class Menu {
 				valorDeVenda =  scanner.nextFloat();
 				
 				System.out.println("Digite o nome do processador:  ");
-				nome = scanner.next();
+				nome = scanner.nextLine();
+				nome = scanner.nextLine();
 				
 				System.out.println("Digite a velocidade do clock: ");
 				tamanho = scanner.next();
@@ -183,7 +191,8 @@ public class Menu {
 				marca= scanner.next();
 				
 				System.out.println("Digite a descrição: ");
-				descricao = scanner.next();;
+				descricao = scanner.nextLine();
+				descricao = scanner.nextLine();
 				tipo=6;
 				processador= new Processador(Arquivo.buscarId("arquivos/componentes.txt"),tipo,valorDeCompra,valorDeVenda,descricao,nome,tamanho, marca);
 				processador.cadastraProduto();
@@ -196,7 +205,8 @@ public class Menu {
 				valorDeVenda =  scanner.nextFloat();
 				
 				System.out.println("Digite o nome da Tela: ");
-				nome = scanner.next();
+				nome = scanner.nextLine();
+				nome = scanner.nextLine();
 				
 				System.out.println("Digite o tamanho da tela: ");
 				tamanho = scanner.next();
@@ -205,7 +215,9 @@ public class Menu {
 				marca= scanner.next();
 				
 				System.out.println("Digite a descrição: ");
-				descricao = scanner.next();
+				descricao = scanner.nextLine();
+				descricao = scanner.nextLine();
+				
 				tipo=7;
 				tela= new Tela(Arquivo.buscarId("arquivos/componentes.txt"),tipo,valorDeCompra,valorDeVenda,descricao,nome,tamanho, marca);
 				tela.cadastraProduto();
@@ -218,7 +230,8 @@ public class Menu {
 				valorDeVenda =  scanner.nextFloat();
 				
 				System.out.println("Digite o nome do Water Cooler: ");
-				nome = scanner.next();
+				nome = scanner.nextLine();
+				nome = scanner.nextLine();
 				
 				System.out.println("Digite o tamanho: ");
 				tamanho = scanner.next();
@@ -227,7 +240,8 @@ public class Menu {
 				marca= scanner.next();
 				
 				System.out.println("Digite a descrição: ");
-				descricao = scanner.next();
+				descricao = scanner.nextLine();
+				descricao = scanner.nextLine();
 				tipo=8;
 				cooler= new WaterCooler(Arquivo.buscarId("arquivos/componentes.txt"),tipo,valorDeCompra,valorDeVenda,descricao,nome,tamanho, marca);
 				cooler.cadastraProduto();

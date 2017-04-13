@@ -1,3 +1,9 @@
 1@@@ADELINO TESTE@@@1235645648@@@RUA 3 COM A 18@@@3496672352
+<<<<<<< HEAD
 2@@@Joao@@@123@@@aasidjas asd 12@@@50515151
 3@@@cliente 3@@@1561891561@@@dqwin asdioasd 5@@@1561531891
+=======
+2@@@Adelino teste@@@646546@@@rua@@@5
+3@@@Adelino teste	@@@64sa4d65as@@@rua c com a b@@@54654654
+4@@@Adelino Teste@@@123565@@@rua 5 com a @@@123456987
+>>>>>>> bd902d784e101d8a2b8b97376cf5999d741277ad
