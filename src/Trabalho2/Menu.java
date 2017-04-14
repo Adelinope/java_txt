@@ -33,7 +33,7 @@ public class Menu {
 	}
 
 	
-	public static void cadastraCliente() throws IOException{
+	public static void cadastraCliente() throws IOException{// Metodo para cadastrar um cliente no txt
 		String nome, cpf, endereco, telefone;
 		System.out.println("Digite o nome do cliente: ");
 		nome = scanner.nextLine();
@@ -46,9 +46,10 @@ public class Menu {
 		telefone = scanner.next();
 		cliente =  new Clientes (Arquivo.buscarId("arquivos/clientes.txt"),nome,cpf,endereco,telefone);
 		cliente.incluiCliente();
+		nome=scanner.nextLine();
 	}
 	
-	public static void incluiComponente() throws IOException{
+	public static void incluiComponente() throws IOException{//Metodo para cadastrar um produto no txt
 		 float valorDeCompra, valorDeVenda;
 		String descricao,  frequencia,  marca, nome, rotacao, tamanho, barramento, soquete;
 		System.out.println("Escolha o produto a se cadastrar:");
@@ -252,8 +253,8 @@ public class Menu {
 				break;
 		}
 		
-	}// me mostra o metodo que calcula o valor 
-	public static void vender() throws IOException{
+	}// 
+	public static void vender() throws IOException{//Metodo para cadastrar uma venda no Txt
 		int opcao=0;
 		int idProduto;
 		ArrayList<Integer>listaCompra = new ArrayList<Integer>();
@@ -267,81 +268,21 @@ public class Menu {
 				System.out.println("Digite o ID do produto: ");
 				idProduto = scanner.nextInt(); 
 				Arquivo.listaDeProdutos(idProduto, listaCompra);
-				valor += Arquivo.precoProduto(idProduto);//cria uma variavel global VALOR  kk oloco como assim? kk pera ..
-				System.out.println("Deseja add outro item: 1- SIM     2- NAO");	//acho que sei um jeito de arrumar isso kkk
+				valor += Arquivo.precoProduto(idProduto);
+				System.out.println("Deseja add outro item: 1- SIM     2- NAO");	
 				opcao=scanner.nextInt();
 			}
 			
 			
-			Vendas venda = new Vendas(Arquivo.buscarId("arquivos/vendas.txt"), id, valor,listaCompra);// A fonte do erro ta na classe de Vendas... pera 
+			Vendas venda = new Vendas(Arquivo.buscarId("arquivos/vendas.txt"), id, valor,listaCompra);
 			Arquivo.escritor(venda.toString(), "arquivos/vendas.txt");
+			valor=0;
 		}else{
-			System.out.println("CLIENTE NÃO EXISTE");//Na arquivos, vou fazer 1 alteração só para testar, vai que da milagre kkk blz
+			System.out.println("CLIENTE NÃO EXISTE");
 		}
 		
 		
 	} 
-////	public static void imprimeTipo(int tipo) throws IOException{código inutil
-//		ArrayList<Produtos>comp;
-//		comp=Arquivo.leitorProdutos();
-//		switch(tipo){
-//		case 1:
-//			for(int i =0;i<comp.size();i++){
-//				if(comp.get(i).getTipo()== 1){
-//					System.out.println(comp.get(i));
-//				}
-//			}
-//			break;
-//		case 2:
-//			for(int i =0;i<comp.size();i++){
-//				if(comp.get(i).getTipo()== 2){
-//					System.out.println(comp.get(i));
-//				}
-//			}
-//			break;
-//		case 3:
-//			for(int i =0;i<comp.size();i++){
-//				if(comp.get(i).getTipo()== 3){
-//					System.out.println(comp.get(i));
-//				}
-//			}
-//			break;
-//		case 4:
-//			for(int i =0;i<comp.size();i++){
-//				if(comp.get(i).getTipo()== 4){
-//					System.out.println(comp.get(i));
-//				}
-//			}
-//			break;
-//		case 5:
-//			for(int i =0;i<comp.size();i++){
-//				if(comp.get(i).getTipo()== 5){
-//					System.out.println(comp.get(i));
-//				}
-//			}
-//			break;
-//		case 6:
-//			for(int i =0;i<comp.size();i++){
-//				if(comp.get(i).getTipo()== 6){
-//					System.out.println(comp.get(i));
-//				}
-//			}
-//			break;
-//		case 7:
-//			for(int i =0;i<comp.size();i++){
-//				if(comp.get(i).getTipo()== 7){
-//					System.out.println(comp.get(i));
-//				}
-//			}
-//			break;
-//		case 8:  
-//			for(int i =0;i<comp.size();i++){
-//				if(comp.get(i).getTipo()== 8){
-//					System.out.println(comp.get(i));
-//				}
-//			}
-//			break;
-//		}funciona 
-//	}
+
 
 }

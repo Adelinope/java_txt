@@ -22,6 +22,7 @@ import Componentes.Produtos;
 import Componentes.Tela;
 import Componentes.WaterCooler;
 
+
 public class Arquivo {
 	static ArrayList <Integer>VARIAVEL=  new ArrayList<Integer>();
 	static ArrayList <Integer>IDS = new ArrayList <Integer>();
@@ -48,14 +49,13 @@ public class Arquivo {
 	    out.println(s);
 	    out.close();
 	}	
-	public static int buscarId(String caminho) throws IOException{
+	public static int buscarId(String caminho) throws IOException{// Metodo para calcular o id de clientes, componentes e vendas
 		int contador = 0;
 		File f = new File(caminho);
 		BufferedReader buffRead = new BufferedReader(new FileReader(f));
         String linha = "";
         while (true) {
             if (linha != null) {
-                //System.out.println(linha);
                contador++;
             } else
                 break;
@@ -72,7 +72,7 @@ public class Arquivo {
         }
         return 1;
 	}
-	public static void leitorProdutos( ) throws IOException{
+	public static void leitorProdutos( ) throws IOException{//metodo para imprimir produtos do txt
 		
 		String caminho = "arquivos/componentes.txt";
 		ArrayList<Produtos> listaProdutos = new ArrayList<Produtos>();
@@ -80,12 +80,12 @@ public class Arquivo {
 		File f = new File(caminho);
 
         Scanner leitor = new Scanner(f);
-		while(leitor.hasNext())//o que houve aqui?
+		while(leitor.hasNext())
 		{
 			linha = leitor.nextLine();
 			String aux[] = linha.split("@@@");
     		
-        	int tipo =  Integer.parseInt(aux[1]); //aqui já da pra pegar o tipo então 
+        	int tipo =  Integer.parseInt(aux[1]); 
         	switch (tipo){
         	case 1:
         		float valorDeCompra= Float.parseFloat(aux[2]);
@@ -96,6 +96,7 @@ public class Arquivo {
             	String marca = aux[7];
             	String barramento;
     			System.out.println(
+    					"ID: "+Integer.parseInt(aux[0])+"\n"+
     					"Valor de Compra: " + Float.parseFloat(aux[2]) + "\n" +
     					"Valor de Venda: " + Float.parseFloat(aux[3]) + "\n" + 
     					"Descrição: " + aux[4] + "\n" +
@@ -114,6 +115,7 @@ public class Arquivo {
             	String tamanho = aux[6];
             	String rotacao = aux[7]; 
             	System.out.println(
+            			"ID: "+Integer.parseInt(aux[0])+"\n"+
     					"Valor de Compra: " + Float.parseFloat(aux[2]) + "\n" +
     					"Valor de Venda: " + Float.parseFloat(aux[3]) + "\n" + 
     					"Descrição: " + aux[4] + "\n" +
@@ -131,6 +133,7 @@ public class Arquivo {
             	marca = aux[6];
             	barramento = aux[7];
             	System.out.println(
+            			"ID: "+Integer.parseInt(aux[0])+"\n"+
     					"Valor de Compra: " + Float.parseFloat(aux[2]) + "\n" +
     					"Valor de Venda: " + Float.parseFloat(aux[3]) + "\n" + 
     					"Descrição: " + aux[4] + "\n" +
@@ -148,6 +151,7 @@ public class Arquivo {
             	barramento = aux[6];
             	marca = aux[7];
             	System.out.println(
+            			"ID: "+Integer.parseInt(aux[0])+"\n"+
     					"Valor de Compra: " + Float.parseFloat(aux[2]) + "\n" +
     					"Valor de Venda: " + Float.parseFloat(aux[3]) + "\n" + 
     					"Descrição: " + aux[4] + "\n" +
@@ -165,6 +169,7 @@ public class Arquivo {
             	tamanho = aux[6];
             	marca = aux[7];
             	System.out.println(
+            			"ID: "+Integer.parseInt(aux[0])+"\n"+
     					"Valor de Compra: " + Float.parseFloat(aux[2]) + "\n" +
     					"Valor de Venda: " + Float.parseFloat(aux[3]) + "\n" + 
     					"Descrição: " + aux[4] + "\n" +
@@ -182,6 +187,7 @@ public class Arquivo {
             	tamanho =  aux[6];
             	marca = aux[7];
             	System.out.println(
+            			"ID: "+Integer.parseInt(aux[0])+"\n"+
     					"Valor de Compra: " + Float.parseFloat(aux[2]) + "\n" +
     					"Valor de Venda: " + Float.parseFloat(aux[3]) + "\n" + 
     					"Descrição: " + aux[4] + "\n" +
@@ -192,13 +198,14 @@ public class Arquivo {
     					);
         		break;
         	case 7:
-         		valorDeCompra= Float.parseFloat(aux[2]); //oxe
+         		valorDeCompra= Float.parseFloat(aux[2]); 
             	valorDeVenda= Float.parseFloat(aux[3]);
             	descricao = aux[4];
             	nome= aux[5]; 
             	tamanho =  aux[6];
             	marca = aux[7];
             	System.out.println(
+            			"ID: "+Integer.parseInt(aux[0])+"\n"+
     					"Valor de Compra: " + Float.parseFloat(aux[2]) + "\n" +
     					"Valor de Venda: " + Float.parseFloat(aux[3]) + "\n" + 
     					"Descrição: " + aux[4] + "\n" +
@@ -217,6 +224,7 @@ public class Arquivo {
             	tamanho=aux[6];
             	marca =  aux[7];
             	System.out.println(
+            			"ID: "+Integer.parseInt(aux[0])+"\n"+
     					"Valor de Compra: " + Float.parseFloat(aux[2]) + "\n" +
     					"Valor de Venda: " + Float.parseFloat(aux[3]) + "\n" + 
     					"Descrição: " + aux[4] + "\n" +
@@ -232,34 +240,33 @@ public class Arquivo {
         }
 			leitor.close();	
 	}
-	static float precoProduto(int id) throws FileNotFoundException{
+	static float precoProduto(int id) throws FileNotFoundException{//Calcula o preço de uma compra 
 		String caminho = "arquivos/componentes.txt";
 		File f = new File(caminho);
         Scanner leitor = new Scanner(f);
         int i = 0;
 		while(leitor.hasNext())
-		{//cade a soma??
-			float rFinal = 0;
+		{
+			//float rFinal = 0;
 			String linha = leitor.nextLine();
 			String aux[] = linha.split("@@@");
 			if(id == IDS.get(i)){
 				    return VALORES.get(i);
 			}
 			i++;
-			System.out.println("OI FORA DO IF");
 		}
 		leitor.close();
 		return 0;
 		
 	}
-	static void listaDeProdutos(int id,ArrayList<Integer>lista){
+	static void listaDeProdutos(int id,ArrayList<Integer>lista){//Guarda os IDS dos produtos comprados
 		for(int i=0;i<IDS.size();i++){
 			if(id==IDS.get(i)){
 				lista.add(IDS.get(i));
 			}
 		}
 	}
-	public static void  leitorClientes(ArrayList<Clientes> clientes) throws IOException{ 
+	public static void  leitorClientes(ArrayList<Clientes> clientes) throws IOException{ //Metodo para listar os clientes
 		String caminho = "arquivos/clientes.txt";
 		File f = new File(caminho);
         Scanner leitor = new Scanner(f);
@@ -280,7 +287,7 @@ public class Arquivo {
 		}
 		leitor.close();
 	}
-	public static boolean verificaId(int id) throws FileNotFoundException{
+	public static boolean verificaId(int id) throws FileNotFoundException{//metodo para verificar se o id de cliente existe
 		String caminho = "arquivos/clientes.txt";
 		File f = new File(caminho);
 		int i = 0;
@@ -300,15 +307,5 @@ public class Arquivo {
 		leitor.close();
 		return false;
 	}
-/*	public static boolean existeCliente(int v) throws IOException{
-		ArrayList<Clientes> cliente = new ArrayList<Clientes>();
-		Arquivo.leitorClientes(cliente);
-		for(int i=0;i<cliente.size();i++){
-			if(v==cliente.get(i).getId()){
-				return true;
-			}
-		}
-		return false;
-	}*/
 
 }
