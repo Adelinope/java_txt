@@ -18,7 +18,7 @@ public class Produtos {
 		this.tipo = tipo;
 	}
 	public String toString(){
-		String str =id+"@@@"+tipo+"@@@"+valorDeCompra+"@@@"+valorDeVenda+"@@@"+"@@@"+descricao; 
+		String str =id+"@@@"+tipo+"@@@"+valorDeCompra+"@@@"+valorDeVenda+"@@@"+descricao; 
 		return str;
 	}
 	public float getValorDeCompra() {
