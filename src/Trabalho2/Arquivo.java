@@ -161,9 +161,14 @@ public class Arquivo {
 	}
 	public static void  leitorClientes(ArrayList<Clientes> clientes) throws IOException{ 
 		String caminho = "arquivos/clientes.txt";
+<<<<<<< HEAD
 		File f = new File(caminho);
 		BufferedReader buffRead = new BufferedReader(new FileReader(f));
 
+=======
+		leitor(caminho);
+		File 
+>>>>>>> 1d4f1e71b8eddf259133baf4836e2c6f9b275182
         Scanner leitor = new Scanner(f);
 		while(leitor.hasNext())
 		{
