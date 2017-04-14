@@ -178,7 +178,6 @@ public class Arquivo {
         }
         buffRead.close();
 		*/
-=======
 
         Scanner leitor = new Scanner(f);
 		while(leitor.hasNext())
