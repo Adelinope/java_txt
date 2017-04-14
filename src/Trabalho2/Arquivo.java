@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import Componentes.Fonte;
 import Componentes.Hd;
@@ -162,18 +163,22 @@ public class Arquivo {
 		String caminho = "arquivos/clientes.txt";
 		File f = new File(caminho);
 		BufferedReader buffRead = new BufferedReader(new FileReader(f));
-        String linha = "";
-        while (true) {
-            if (linha != null) {
-                String []itens = linha.split("@@@");
-                int id =  Integer.parseInt(itens[0]);
-                Clientes c = new Clientes(id, itens[1], itens[2], itens[3], itens[4]);
-                clientes.add(c);
-            } else
-                break;
-            linha = buffRead.readLine();
-        }
-        buffRead.close();
+
+        Scanner leitor = new Scanner(f);
+		while(leitor.hasNext())
+		{
+			String linha = leitor.nextLine();
+			String aux[] = linha.split("@@@");
+			System.out.println(
+					"ID: " + aux[0] + "\n" +
+					"Nome: " + aux[1] + "\n" + 
+					"CPF: " + aux[2] + "\n" +
+					"Endereço: " + aux[3] + "\n" +
+					"Telefone: " + aux[4] + "\n" +
+					"----------------------------------------"
+					);
+		}
+		leitor.close();
 		
 	}
 
