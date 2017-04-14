@@ -179,7 +179,7 @@ public class Arquivo {
 					);
 		}
 		leitor.close();
-		
+		//feito
 	}
 
 	public static boolean existeCliente(int v) throws IOException{
