@@ -160,7 +160,8 @@ public class Arquivo {
 	}
 	public static void  leitorClientes(ArrayList<Clientes> clientes) throws IOException{ 
 		String caminho = "arquivos/clientes.txt";
-		File f = new File(caminho);
+		leitor(caminho);
+		/*File f = new File(caminho);
 		BufferedReader buffRead = new BufferedReader(new FileReader(f));
         String linha = "";
         while (true) {
@@ -174,7 +175,7 @@ public class Arquivo {
             linha = buffRead.readLine();
         }
         buffRead.close();
-		
+		*/
 	}
 
 	public static boolean existeCliente(int v) throws IOException{
