@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import Componentes.Fonte;
 import Componentes.Hd;
@@ -163,6 +164,7 @@ public class Arquivo {
 		leitor(caminho);
 		/*File f = new File(caminho);
 		BufferedReader buffRead = new BufferedReader(new FileReader(f));
+<<<<<<< HEAD
         String linha = "";
         while (true) {
             if (linha != null) {
@@ -176,6 +178,25 @@ public class Arquivo {
         }
         buffRead.close();
 		*/
+=======
+
+        Scanner leitor = new Scanner(f);
+		while(leitor.hasNext())
+		{
+			String linha = leitor.nextLine();
+			String aux[] = linha.split("@@@");
+			System.out.println(
+					"ID: " + aux[0] + "\n" +
+					"Nome: " + aux[1] + "\n" + 
+					"CPF: " + aux[2] + "\n" +
+					"Endereço: " + aux[3] + "\n" +
+					"Telefone: " + aux[4] + "\n" +
+					"----------------------------------------"
+					);
+		}
+		leitor.close();
+		
+>>>>>>> 0b79b6a2fae0e81515116fea8c2766d7ff9a2612
 	}
 
 	public static boolean existeCliente(int v) throws IOException{
