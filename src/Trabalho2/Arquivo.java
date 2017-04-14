@@ -162,23 +162,7 @@ public class Arquivo {
 	public static void  leitorClientes(ArrayList<Clientes> clientes) throws IOException{ 
 		String caminho = "arquivos/clientes.txt";
 		leitor(caminho);
-		/*File f = new File(caminho);
-		BufferedReader buffRead = new BufferedReader(new FileReader(f));
-<<<<<<< HEAD
-        String linha = "";
-        while (true) {
-            if (linha != null) {
-                String []itens = linha.split("@@@");
-                int id =  Integer.parseInt(itens[0]);
-                Clientes c = new Clientes(id, itens[1], itens[2], itens[3], itens[4]);
-                clientes.add(c);
-            } else
-                break;
-            linha = buffRead.readLine();
-        }
-        buffRead.close();
-		*/
-
+		File 
         Scanner leitor = new Scanner(f);
 		while(leitor.hasNext())
 		{
