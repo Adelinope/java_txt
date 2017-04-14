@@ -7,3 +7,5 @@
 7@@@6@@@850.0@@@1050.0@@@@@@AMD RYZEN SR7 OCTACORE 4GHZ@@@RYZEN SR7@@@4GHZ@@@AMD
 8@@@7@@@600.0@@@780.0@@@@@@TELA LG 24" 60HZ@@@TELA LG 24'@@@24''@@@LG
 9@@@8@@@600.0@@@850.0@@@@@@WATER COOLER COOLER MASTER 120mm@@@RXVLK@@@120mm@@@COOLERMASTER
+10@@@1@@@800.0@@@900.0@@@asdasdasdasda@@@nome1@@@gfrquencia@@@asjdoiasjd
+ 

@@ -30,11 +30,8 @@ public class Main {
 				Menu.vender();
 				break;
 			case 4:
-				ArrayList<Produtos>produtos = new ArrayList<Produtos>();
-				produtos.addAll(Arquivo.leitorProdutos());
-				for(int i=0;i<produtos.size();i++){
-					System.out.println(produtos);
-				}
+				Arquivo.leitorProdutos();
+				
 				break;
 			case 5:
 				ArrayList<Clientes>cliente =  new ArrayList<Clientes>();

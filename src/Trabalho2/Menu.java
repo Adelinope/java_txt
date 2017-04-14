@@ -26,6 +26,7 @@ public class Menu {
 	private static WaterCooler cooler;
 	private static int opc;
 	private static int tipo;
+	private static float valor;
 	
 	public Menu(){
 		
@@ -251,89 +252,96 @@ public class Menu {
 				break;
 		}
 		
-	}
+	}// me mostra o metodo que calcula o valor 
 	public static void vender() throws IOException{
-	
-		System.out.println("Digite o id do cliente: ");
-		int id = scanner.nextInt();
 		int opcao=0;
 		int idProduto;
-		ArrayList<Produtos>listaCompra = new ArrayList<Produtos>();
-		while(opcao!=2){
-			System.out.println("ESCOLHA O TIPO DE PRODUTO:1- FONTE\n2- HD\n3-MEMORIA\n4-PLACA MAE\n5- PLACA DE VIDEO\n6- PROCESSADOR\n7- TELA\n8- WATERCOOLER");
-			opc=scanner.nextInt();
-			Menu.imprimeTipo(opc);
-			System.out.println("Digite o ID do produto: ");
-			idProduto = scanner.nextInt();
-			listaCompra.add(Vendas.localiza(idProduto));
-			System.out.println("Deseja add outro item: 1- SIM     2- NAO");	
-			opcao=scanner.nextInt();
+		ArrayList<Integer>listaCompra = new ArrayList<Integer>();
+		System.out.println("Digite o id do cliente: ");
+		int id = scanner.nextInt();
+		
+		if(Arquivo.verificaId(id)){
+			Arquivo.leitorProdutos();
+			while(opcao!=2){ 
+				
+				System.out.println("Digite o ID do produto: ");
+				idProduto = scanner.nextInt(); 
+				Arquivo.listaDeProdutos(idProduto, listaCompra);
+				valor += Arquivo.precoProduto(idProduto);//cria uma variavel global VALOR  kk oloco como assim? kk pera ..
+				System.out.println("Deseja add outro item: 1- SIM     2- NAO");	//acho que sei um jeito de arrumar isso kkk
+				opcao=scanner.nextInt();
+			}
+			
+			
+			Vendas venda = new Vendas(Arquivo.buscarId("arquivos/vendas.txt"), id, valor,listaCompra);// A fonte do erro ta na classe de Vendas... pera 
+			Arquivo.escritor(venda.toString(), "arquivos/vendas.txt");
+		}else{
+			System.out.println("CLIENTE NÃO EXISTE");//Na arquivos, vou fazer 1 alteração só para testar, vai que da milagre kkk blz
 		}
-		float valor = Vendas.retornaPreco(listaCompra);
-		Vendas venda = new Vendas(Arquivo.buscarId("arqiovos/vendas.txt"), id, valor, listaCompra);
-		venda.toString();		
-	}
-	public static void imprimeTipo(int tipo) throws IOException{
-		ArrayList<Produtos>comp;
-		comp=Arquivo.leitorProdutos();
-		switch(tipo){
-		case 1:
-			for(int i =0;i<comp.size();i++){
-				if(comp.get(i).getTipo()== 1){
-					System.out.println(comp.get(i));
-				}
-			}
-			break;
-		case 2:
-			for(int i =0;i<comp.size();i++){
-				if(comp.get(i).getTipo()== 2){
-					System.out.println(comp.get(i));
-				}
-			}
-			break;
-		case 3:
-			for(int i =0;i<comp.size();i++){
-				if(comp.get(i).getTipo()== 3){
-					System.out.println(comp.get(i));
-				}
-			}
-			break;
-		case 4:
-			for(int i =0;i<comp.size();i++){
-				if(comp.get(i).getTipo()== 4){
-					System.out.println(comp.get(i));
-				}
-			}
-			break;
-		case 5:
-			for(int i =0;i<comp.size();i++){
-				if(comp.get(i).getTipo()== 5){
-					System.out.println(comp.get(i));
-				}
-			}
-			break;
-		case 6:
-			for(int i =0;i<comp.size();i++){
-				if(comp.get(i).getTipo()== 6){
-					System.out.println(comp.get(i));
-				}
-			}
-			break;
-		case 7:
-			for(int i =0;i<comp.size();i++){
-				if(comp.get(i).getTipo()== 7){
-					System.out.println(comp.get(i));
-				}
-			}
-			break;
-		case 8:
-			for(int i =0;i<comp.size();i++){
-				if(comp.get(i).getTipo()== 8){
-					System.out.println(comp.get(i));
-				}
-			}
-			break;
-		}
-	}
+		
+		
+	} 
+////	public static void imprimeTipo(int tipo) throws IOException{código inutil
+//		ArrayList<Produtos>comp;
+//		comp=Arquivo.leitorProdutos();
+//		switch(tipo){
+//		case 1:
+//			for(int i =0;i<comp.size();i++){
+//				if(comp.get(i).getTipo()== 1){
+//					System.out.println(comp.get(i));
+//				}
+//			}
+//			break;
+//		case 2:
+//			for(int i =0;i<comp.size();i++){
+//				if(comp.get(i).getTipo()== 2){
+//					System.out.println(comp.get(i));
+//				}
+//			}
+//			break;
+//		case 3:
+//			for(int i =0;i<comp.size();i++){
+//				if(comp.get(i).getTipo()== 3){
+//					System.out.println(comp.get(i));
+//				}
+//			}
+//			break;
+//		case 4:
+//			for(int i =0;i<comp.size();i++){
+//				if(comp.get(i).getTipo()== 4){
+//					System.out.println(comp.get(i));
+//				}
+//			}
+//			break;
+//		case 5:
+//			for(int i =0;i<comp.size();i++){
+//				if(comp.get(i).getTipo()== 5){
+//					System.out.println(comp.get(i));
+//				}
+//			}
+//			break;
+//		case 6:
+//			for(int i =0;i<comp.size();i++){
+//				if(comp.get(i).getTipo()== 6){
+//					System.out.println(comp.get(i));
+//				}
+//			}
+//			break;
+//		case 7:
+//			for(int i =0;i<comp.size();i++){
+//				if(comp.get(i).getTipo()== 7){
+//					System.out.println(comp.get(i));
+//				}
+//			}
+//			break;
+//		case 8:  
+//			for(int i =0;i<comp.size();i++){
+//				if(comp.get(i).getTipo()== 8){
+//					System.out.println(comp.get(i));
+//				}
+//			}
+//			break;
+//		}funciona 
+//	}
 
 }
