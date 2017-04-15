@@ -28,6 +28,7 @@ public class Arquivo {
 	static ArrayList <Integer>IDS = new ArrayList <Integer>();
 	static ArrayList <Float>VALORES = new ArrayList <Float>();
 	static float VALORAUX;
+	static ArrayList<String> NOMES = new ArrayList<String>();
 	public static void leitor(String caminho) throws IOException 
 	{
 		File f = new File(caminho);
@@ -307,5 +308,44 @@ public class Arquivo {
 		leitor.close();
 		return false;
 	}
-
+	public static boolean verificaNome(String nome) throws FileNotFoundException{//metodo para verificar se o id de cliente existe
+		String caminho = "arquivos/clientes.txt";
+		File f = new File(caminho);
+		int i = 0;
+        Scanner leitor = new Scanner(f);
+		while(leitor.hasNext())
+		{
+			String linha = leitor.nextLine();
+			String aux[] = linha.split("@@@");
+			
+			NOMES.add(aux[1]);
+			if(NOMES.get(i).equals(nome)){
+				return true;
+			}
+			i++;
+			
+		}
+		leitor.close();
+		return false;
+	}
+	public static int retornaIdCliente(String nome) throws FileNotFoundException{//metodo para verificar se o id de cliente existe
+		String caminho = "arquivos/clientes.txt";
+		File f = new File(caminho);
+		int i = 0;
+        Scanner leitor = new Scanner(f);
+		while(leitor.hasNext())
+		{
+			String linha = leitor.nextLine();
+			String aux[] = linha.split("@@@");
+			
+			NOMES.add(aux[1]);
+			if(NOMES.get(i).equals(nome)){
+				return Integer.parseInt(aux[0]);
+			}
+			i++;
+			
+		}
+		leitor.close();
+		return -1;
+	}
 }

@@ -22,7 +22,7 @@ public class Vendas {
 
 
 	public  String toString(){
-		String str =id+"@@@"+idcliente+"@@@"+valor;
+		String str =id+"@@@ID CLIENTE: "+idcliente+"@@@VALOR COMPRA"+valor+"@@@IDS PRODUTOS: ";
 		for(int i=0;i<produto.size();i++){
 			str=str+"@@@"+produto.get(i);
 		}

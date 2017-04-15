@@ -255,13 +255,25 @@ public class Menu {
 		
 	}// 
 	public static void vender() throws IOException{//Metodo para cadastrar uma venda no Txt
-		int opcao=0;
+		int opcao=0, o;
 		int idProduto;
+		int id = 0 ;
+		String nome = null;
 		ArrayList<Integer>listaCompra = new ArrayList<Integer>();
-		System.out.println("Digite o id do cliente: ");
-		int id = scanner.nextInt();
+		System.out.println("Escolha pesquisar por: 1-ID 2-NOME");
+		o=scanner.nextInt();
+		if(o==1){
+			id= scanner.nextInt();
+		}else{
+			System.out.println("Digite o nome: ");
+			nome=scanner.nextLine();
+			nome=scanner.nextLine();
+			id= Arquivo.retornaIdCliente(nome);
+			
+		}
+		System.out.println("\n\n----------------------------------");
 		
-		if(Arquivo.verificaId(id)){
+		if(Arquivo.verificaId(id) || Arquivo.verificaNome(nome)){
 			Arquivo.leitorProdutos();
 			while(opcao!=2){ 
 				
