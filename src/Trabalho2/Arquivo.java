@@ -348,4 +348,13 @@ public class Arquivo {
 		leitor.close();
 		return -1;
 	}
+	public static float removeValor(int posi, float valor){
+		for(int i=0;i<VALORES.size();i++){
+			if(IDS.get(i)==posi){
+				valor-=VALORES.get(i);
+			}
+		}
+		
+		return valor;	
+	}
 }

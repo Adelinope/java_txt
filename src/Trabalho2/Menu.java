@@ -263,6 +263,7 @@ public class Menu {
 		System.out.println("Escolha pesquisar por: 1-ID 2-NOME");
 		o=scanner.nextInt();
 		if(o==1){
+			System.out.println("DIGITE O ID: ");
 			id= scanner.nextInt();
 		}else{
 			System.out.println("Digite o nome: ");
@@ -284,9 +285,28 @@ public class Menu {
 				System.out.println("Deseja add outro item: 1- SIM     2- NAO");	
 				opcao=scanner.nextInt();
 			}
+			int k, opc=0;
+			System.out.println("IDS DOS ITENS: "+listaCompra);
+			System.out.println("VALOR: "+valor);
+			System.out.println("Deseja remover um item: 1-SIM 2-NAO");
+			opc=scanner.nextInt();
+			while(opc!=2){
+				
+				System.out.println("Digite seu ID: ");
+				k= scanner.nextInt();
+				for(int i=0;i<listaCompra.size();i++){
+					if(k==listaCompra.get(i)){
+						listaCompra.remove(i);
+						
+					}
+				}
+				valor =Arquivo.removeValor(k, valor);
+
+				System.out.println("Deseja remover um item: 1-SIM 2-NAO");
+				opc=scanner.nextInt();
+			}
+						Vendas venda = new Vendas(Arquivo.buscarId("arquivos/vendas.txt"), id, valor,listaCompra);
 			
-			
-			Vendas venda = new Vendas(Arquivo.buscarId("arquivos/vendas.txt"), id, valor,listaCompra);
 			Arquivo.escritor(venda.toString(), "arquivos/vendas.txt");
 			valor=0;
 		}else{

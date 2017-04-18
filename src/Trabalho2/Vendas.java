@@ -9,7 +9,7 @@ import Componentes.Produtos;
 public class Vendas {
 	int id;
 	static float valor;
-	int idcliente;
+	static int idcliente;
 	static ArrayList<Integer> produto;
 	
 	public Vendas(int id, int idCliente, float valor, ArrayList<Integer>produto){

@@ -6,3 +6,5 @@
 6@@@6@@@650.0@@@890.0@@@AMD FX8350 4GHZ OCTACORE@@@FX8350@@@4.2GHZ@@@AMD
 7@@@7@@@350.0@@@750.0@@@LG XVK21 24" LED@@@XVK21@@@24"@@@LG
 8@@@8@@@500.0@@@680.0@@@WATER COOLER COOLER MASTER 120mm @@@GKZ@@@120mm@@@COOLERMASTER
+9@@@1@@@222.0@@@232.0@@@aaaa@@@aaaaa@@@aaaa@@@aaaa
+10@@@1@@@222.0@@@2223.0@@@bbb@@@bbb@@@bbb@@@bbb
